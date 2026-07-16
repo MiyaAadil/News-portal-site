@@ -17,7 +17,7 @@ const Approutes = () => {
             <Route path="/about" element={<About />} />
             <Route path="/article" element={<Article />} />
             <Route path="/bookmark" element={<Bookmark />} />
-            <Route path="/category" element={<Category />} />
+            <Route path="/category/:name" element={<Category />} />
             <Route path="/search" element={<Search />} /> 
          </Route>   
 

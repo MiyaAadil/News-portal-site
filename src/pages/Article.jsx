@@ -3,7 +3,7 @@ import React from 'react'
 const Article = () => {
   return (
     <div>
-      This is article page
+      This is Article page
     </div>
   )
 }
