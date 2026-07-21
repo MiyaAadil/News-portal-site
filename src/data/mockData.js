@@ -1,6 +1,9 @@
 import News1 from '../assets/images/News1.png'
 import News2 from '../assets/images/News2.webp'
 import News3 from '../assets/images/News3.jpg'
+import News4 from '../assets/images/News4.jpg'
+import News5 from '../assets/images/News5.jpg'
+import News6 from '../assets/images/News6.jpg'
 
 export const mockDatas = [
     {
@@ -32,7 +35,7 @@ export const mockDatas = [
         title: "Tech Company Announces New AI Model",
         description: "A brief placeholder description standing in for a real article summary.",
         url: "https://example.com/1",
-        image: "https://placehold.co/600x400",
+        image: News4,
         source: { name: "Tech Daily" },
         category: "Technology"
     }, {
@@ -40,7 +43,7 @@ export const mockDatas = [
         title: "Markets React to Economic News",
         description: "Another placeholder description for testing your layout with multiple cards.",
         url: "https://example.com/2",
-        image: "https://placehold.co/600x400",
+        image: News5,
         source: { name: "Finance Weekly" },
         category: "Business"
     }, {
@@ -48,7 +51,7 @@ export const mockDatas = [
         title: "New Health Study Released",
         description: "Researchers have published findings on a new approach to preventive healthcare.",
         url: "https://example.com/4",
-        image: "https://placehold.co/600x400",
+        image: News6,
         source: { name: "Health Today" },
         category: "Health"
     },

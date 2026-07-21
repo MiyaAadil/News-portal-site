@@ -1,6 +1,8 @@
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 import { Link } from "react-router-dom"
 import { useState } from "react";
+import { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
 const links = [
   {
@@ -25,8 +27,9 @@ const links = [
 const categories =["Technology", "Business", "Sports", "Health", "Entertainment", "World"]
 
 const Navbar = () => {
-
+  const { theme, setTheme } = useContext(ThemeContext);
   const [isOpen, setIsOpen] = useState(false);
+
 
   return (
     <div  className='flex justify-between items-center p-5 bg-[#dc2626] text-[#f8fafc] font-medium h-15 sticky top-0 z-50 shadow-lg'>
@@ -36,7 +39,18 @@ const Navbar = () => {
 
 
       {/* NavLinks for desktop */}
-      <div className="hidden md:flex gap-5">
+      <div className="hidden md:flex gap-5 items-center">
+
+        {/* Dark mode button */}
+          <button
+            onClick={() =>
+              setTheme(theme === "light" ? "dark" : "light")
+            }
+            className="p-2 rounded-full transition-all cursor-pointer duration-500 hover:bg-[#f86262]"
+          >
+            {theme === "light" ? <Moon /> : <Sun className="text-black" />}
+          </button>
+
         {links.map((link) => (
         <div key={link.id} className="transition-all duration-500 hover:bg-[#f86262] py-1 px-3 rounded-full">
           <Link to={link.path}>{link.name}</Link>
@@ -46,7 +60,17 @@ const Navbar = () => {
 
 
       {/* Mobile menu */}
-      <div className="md:hidden flex relative">
+      <div className="md:hidden flex relative gap-3">
+
+        {/* Dark mode button */}
+          <button
+            onClick={() =>
+              setTheme(theme === "light" ? "dark" : "light")
+            }
+            className="p-2 rounded-full transition-all cursor-pointer duration-500 hover:bg-[#f86262]"
+          >
+            {theme === "light" ? <Moon /> : <Sun className="text-black" />}
+          </button>
 
         <button className="cursor-pointer" onClick={() => setIsOpen(!isOpen)}>{isOpen ? <X size={30} /> : <Menu size={30} />}</button>
 

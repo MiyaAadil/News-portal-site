@@ -5,7 +5,7 @@ const LatestNews = () => {
     const { articles, loading } = useNews()
 
   return (
-    <section className="max-w-7xl mx-auto px-5 py-16">
+    <section className="max-w-7xl mx-auto px-5 py-16 dark:text-gray-200">
 
       <div className="flex justify-between items-center mb-8">
 
@@ -26,7 +26,7 @@ const LatestNews = () => {
 
           <div
             key={item.id}
-            className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer flex flex-col justify-between"
+            className="bg-white dark:bg-slate-900 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer flex flex-col"
           >
 
             <div className="overflow-hidden">
@@ -41,11 +41,11 @@ const LatestNews = () => {
 
             <div className="p-5">
 
-              <span className="inline-block bg-red-100 text-red-600 text-sm px-3 py-1 rounded-full font-medium">
+              <span className="inline-block bg-red-100 dark:bg-gray-300 text-red-600 text-sm px-3 py-1 rounded-full font-medium">
                 {item.category}
               </span>
 
-              <h3 className="text-2xl font-bold mt-4 group-hover:text-red-600 transition">
+              <h3 className="text-2xl font-bold mt-4 group-hover:text-red-500 transition">
                 {item.title}
               </h3>
 
@@ -60,10 +60,10 @@ const LatestNews = () => {
                 <span>{item.publishedAt}</span>
 
               </div>
-
-              <button className="mt-6 bg-red-600 hover:bg-red-700 text-white px-5 py-3 rounded-xl transition cursor-pointer">
+              
+                <button className="mt-6 bg-red-600 hover:bg-red-700 text-white px-5 py-3 rounded-xl transition cursor-pointer">
                 Read Article
-              </button>
+                </button>
 
             </div>
 

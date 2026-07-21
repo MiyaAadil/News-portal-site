@@ -12,7 +12,7 @@ const categories = [
 
 const CategoryNav = () => {
   return (
-    <section className="max-w-7xl px-5 py-5">
+    <section className="max-w-7xl px-5 py-5 dark:text-gray-200">
       <h2 className="text-3xl font-bold mb-6">Browse by Category</h2>
 
       <div className="flex flex-wrap gap-3">
@@ -20,7 +20,7 @@ const CategoryNav = () => {
           <Link
             key={name}
             to={`/category/${name}`}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-100 text-sm font-medium capitalize hover:bg-red-500 hover:text-white transition-colors duration-300"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-100 dark:bg-slate-900 dark:hover:bg-red-300 text-sm font-medium capitalize hover:bg-red-500 hover:text-white transition-colors duration-300"
           >
             <Icon size={16} />
             {name}
