@@ -18,7 +18,7 @@ const Search = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12">
+    <div className="max-w-7xl mx-auto px-6 py-12 dark:text-gray-200">
 
       <h1 className="text-3xl font-bold mb-6">Search News</h1>
 

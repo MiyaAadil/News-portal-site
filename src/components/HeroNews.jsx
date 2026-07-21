@@ -1,15 +1,21 @@
 import Sam from '../assets/images/Altman.png'
 import { ArrowRight } from 'lucide-react'
 import useNews from '../hooks/useNews'
+import { motion } from 'framer-motion'
 
 
 const HeroNews = () => {
     const { articles, loading } = useNews()
 
   return (
-    <div className='flex flex-col lg:grid grid-cols-2 lg:p-5 dark:text-gray-300'>
+    <div className='flex flex-col lg:flex-row lg:p-5 dark:text-gray-300'>
 
-        <div className='relative cursor-pointer group overflow-hidden'>
+        <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+        className='relative cursor-pointer group overflow-hidden w-full'>
                 <img loading='lazy' className='w-full lg:h-140 object-cover group-hover:scale-103 transition-all duration-500 lg:rounded-xl' src={Sam} alt="Sam altman" />
 
                 <div className='absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent lg:h-140 lg:rounded-xl'></div>
@@ -24,11 +30,16 @@ const HeroNews = () => {
 
                 <button className='bg-blue-700 p-2 rounded-full cursor-pointer hover:bg-blue-500 transition-all duration-300 w-32 flex items-center justify-center gap-1'>Read more <ArrowRight size={17} /> </button>
             </div>
-    </div>
+    </motion.div>
 
 
     {/* Right side small news for desktop */}
-    <div className='overflow-hidden'>
+    <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+    className='overflow-hidden'>
         {articles.slice(1, 5).map((article) => (
             <div className='flex flex-col border-b border-gray-300 hover:scale-103 transition-all duration-500 cursor-pointer'>
                 <div className='p-5 flex gap-3'>
@@ -44,7 +55,7 @@ const HeroNews = () => {
                 </div>
             </div>
         ))}
-    </div>
+    </motion.div>
     
 </div>
   )
