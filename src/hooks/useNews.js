@@ -8,7 +8,7 @@ const useNews = (category = null) => {
 
     useEffect(() => {
         setTimeout(() => {
-            const filtered = category ? mockDatas.filter(a => a.category === category) : mockDatas
+            const filtered = category ? mockDatas.filter(a => a.category.toLowerCase() === category.toLowerCase()) : mockDatas
 
             setArticles(filtered)
             setLoading(false)

@@ -16,10 +16,10 @@ const HeroNews = () => {
 
                 <h1 className='absolute inset-0 p-5 text-4xl md:text-6xl md:py-20 text-gray-200 font-bold'>Featured News</h1>
 
-            <div className='absolute bottom-0 md:bottom-10 text-white p-5 flex flex-col gap-2 md:gap-6'>
+            <div className='absolute bottom-0 md:bottom-10 lg:bottom-0 text-white p-5 flex flex-col gap-2 md:gap-6'>
                 
                 <p className='text-xs text-gray-200 bg-gray-200/30 w-10 text-center py-1 rounded-full'>AI</p>
-                <h1 className='text-2xl md:text-5xl font-semibold'>OpenAI's first hardware device is reportedly a screenless speaker that can move</h1>
+                <h1 className='text-2xl md:text-5xl font-bold md:leading-15'>OpenAI's first hardware device is reportedly a screenless speaker that can move</h1>
                 <p className='text-gray-300 text-sm'>Lucas Ropek - 9 hours ago</p>
 
                 <button className='bg-blue-700 p-2 rounded-full cursor-pointer hover:bg-blue-500 transition-all duration-300 w-32 flex items-center justify-center gap-1'>Read more <ArrowRight size={17} /> </button>

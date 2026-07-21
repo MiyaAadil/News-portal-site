@@ -1,4 +1,4 @@
-import { Cat, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom"
 import { useState } from "react";
 
@@ -13,11 +13,11 @@ const links = [
     name: "About",
   }, {
     id: 3,
-    path: 'bookmark',
+    path: '/bookmark',
     name: "Bookmark",
   }, {
     id: 4,
-    path: 'search',
+    path: '/search',
     name: "Search",
   },
 ];
@@ -38,8 +38,8 @@ const Navbar = () => {
       {/* NavLinks for desktop */}
       <div className="hidden md:flex gap-5">
         {links.map((link) => (
-        <div className="transition-all duration-500 hover:bg-[#f86262] py-1 px-3 rounded-full">
-          <Link key={link.id} to={link.path}>{link.name}</Link>
+        <div key={link.id} className="transition-all duration-500 hover:bg-[#f86262] py-1 px-3 rounded-full">
+          <Link to={link.path}>{link.name}</Link>
         </div>
       ))}
       </div>
