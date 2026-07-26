@@ -22,7 +22,7 @@ const LatestNews = () => {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        {articles.map((item) => (
+        {articles.slice(0, 6).map((item) => (
 
           <div
             key={item.id}
@@ -32,7 +32,7 @@ const LatestNews = () => {
             <div className="overflow-hidden">
 
               <img
-                src={item.image}
+                src={item.image_url}
                 alt={item.title}
                 className="w-full h-56 object-cover group-hover:scale-105 transition duration-500"
               />
@@ -49,7 +49,7 @@ const LatestNews = () => {
                 {item.title}
               </h3>
 
-              <p className="text-gray-600 mt-3">
+              <p className="text-gray-600 mt-3 line-clamp-3">
                 {item.description}
               </p>
 
@@ -57,7 +57,7 @@ const LatestNews = () => {
 
                 <span>{item.author}</span>
 
-                <span>{item.publishedAt}</span>
+                <span>{item.pubDate}</span>
 
               </div>
               

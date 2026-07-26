@@ -34,7 +34,7 @@ const Navbar = () => {
 
 
   return (
-    <div  className='flex justify-between items-center p-5 bg-[#dc2626] text-[#f8fafc] font-medium h-15 sticky top-0 z-50 shadow-lg'>
+    <div  className='flex justify-between items-center p-5 bg-[#dc2626] dark:bg-red-900 text-[#f8fafc] font-medium h-15 sticky top-0 z-50 shadow-lg'>
       <Link to='/'>
         {/* <p onClick={() => setIsOpen(false)} className='bg-black py-2 px-3 rounded-xl cursor-pointer hover:scale-105 transition-all duration-300 text-gray-100'>NewsPulse</p> */}
           <img className="h-9 hover:scale-105 transition-all duration-300" src={Logo} alt="Logo" />
@@ -49,7 +49,7 @@ const Navbar = () => {
             onClick={() =>
               setTheme(theme === "light" ? "dark" : "light")
             }
-            className="p-2 rounded-full transition-all cursor-pointer duration-500 hover:bg-[#f86262]"
+            className="p-2 rounded-full transition-all cursor-pointer duration-500 hover:bg-[#f86262] dark:hover:bg-red-700"
           >
             {theme === "light" ? <Moon /> : <Sun className="text-black" />}
           </button>
@@ -60,7 +60,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             `transition duration-300 ${
               isActive
-                ? "font-semibold shadow-md bg-[#f86262] py-1.5 px-3 rounded-full transition-all duration-300"
+                ? "font-semibold shadow-md bg-[#f86262] dark:bg-red-700 py-1.5 px-3 rounded-full transition-all duration-300"
                 : ""
             }`
           }
