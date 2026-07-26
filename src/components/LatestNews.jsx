@@ -1,5 +1,6 @@
 import useNews from "../hooks/useNews";
 import { ArrowRight } from "lucide-react";
+import { Link } from 'react-router-dom'
 
 const LatestNews = () => {
     const { articles, loading } = useNews()
@@ -13,10 +14,12 @@ const LatestNews = () => {
           Latest News
         </h2>
 
+        <Link to='/search'>
         <button className="flex items-center gap-2 text-red-600 hover:text-red-700 font-semibold cursor-pointer">
           View All
           <ArrowRight size={18} />
         </button>
+        </Link>
 
       </div>
 
@@ -32,7 +35,7 @@ const LatestNews = () => {
             <div className="overflow-hidden">
 
               <img
-                src={item.image_url}
+                src={item.image}
                 alt={item.title}
                 className="w-full h-56 object-cover group-hover:scale-105 transition duration-500"
               />
