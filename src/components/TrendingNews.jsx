@@ -1,8 +1,9 @@
 import useNews from '../hooks/useNews';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom'
 
 
-const TrendingNews = ({ article }) => {
+const TrendingNews = () => {
     const { articles, loading } = useNews()
 
   return (
@@ -27,13 +28,18 @@ const TrendingNews = ({ article }) => {
             show: { opacity: 1, y: 0 },
         }}
         className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-7xl mx-auto cursor-pointer'>
-        {articles.slice(0, 6).map((article) => (
-            <div className='border-b border-gray-400 flex flex-col gap-1 hover:text-red-400 transition-colors duration-300 ' key={article.id}>
-            <img className='rounded-2xl h-60 object-cover hover:scale-102 transition-all duration-300' src={article.image} alt="" />
-            <h1 className='font-semibold text-xl line-clamp-2'>{article.title}</h1>
-            <p className='text-sm line-clamp-3'>{article.description}</p>
-            <p className='text-sm underline text-blue-800 mb-5'>{article.link}</p>       
-            </div>
+        {articles.slice(5, 12).map((article) => (
+          <Link to={`/article/${article.article_id}`}
+          state={{ article }}
+          >
+              <div className='border-b border-gray-400 flex flex-col gap-1 hover:text-red-400 transition-colors duration-300 ' key={article.id}>
+              <img className='rounded-2xl h-60 object-cover hover:scale-102 transition-all duration-300' src={article.image_url} alt="" />
+              <h1 className='font-semibold text-xl line-clamp-2'>{article.title}</h1>
+              <p className='text-sm line-clamp-3'>{article.description}</p>
+
+              <p className='text-sm underline text-blue-800 mb-5'>{article.link}</p>       
+              </div>
+          </Link>
         ))}
         </motion.div>
     </motion.div>

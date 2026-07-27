@@ -4,7 +4,7 @@ const API_KEY = import.meta.env.VITE_NEWSDATA_API_KEY;
 
 const BASE_URL = "https://newsdata.io/api/1/latest";
 
-export const getTopHeadlines = async () => {
+export const getTopHeadlines = async (category = "", query = "") => {
   try {
     const response = await axios.get(BASE_URL, {
       params: {

@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { Cpu, Briefcase, Trophy, HeartPulse, Clapperboard, Globe } from 'lucide-react'
-import Category from '../pages/Category'
 
 const categories = [
   { name: "technology", icon: Cpu },

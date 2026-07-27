@@ -25,18 +25,19 @@ const LatestNews = () => {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        {articles.slice(0, 6).map((item) => (
+        {articles.slice(11, 17).map((article) => (
 
+          
           <div
-            key={item.id}
+            key={article.id}
             className="bg-white dark:bg-slate-900 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer flex flex-col"
           >
 
             <div className="overflow-hidden">
 
               <img
-                src={item.image}
-                alt={item.title}
+                src={article.image_url}
+                alt={article.title}
                 className="w-full h-56 object-cover group-hover:scale-105 transition duration-500"
               />
 
@@ -45,28 +46,32 @@ const LatestNews = () => {
             <div className="p-5">
 
               <span className="inline-block bg-red-100 dark:bg-gray-300 text-red-600 text-sm px-3 py-1 rounded-full font-medium">
-                {item.category}
+                {article.category}
               </span>
 
               <h3 className="text-2xl font-bold mt-4 group-hover:text-red-500 transition">
-                {item.title}
+                {article.title}
               </h3>
 
               <p className="text-gray-600 mt-3 line-clamp-3">
-                {item.description}
+                {article.description}
               </p>
 
               <div className="flex justify-between items-center mt-6 text-sm text-gray-500">
 
-                <span>{item.author}</span>
+                <span>{article.author}</span>
 
-                <span>{item.pubDate}</span>
+                <span>{article.pubDate}</span>
 
               </div>
-              
+
+              <Link to={`/article/${article.article_id}`}
+              state={{ article }}
+              >
                 <button className="mt-6 bg-red-600 hover:bg-red-700 text-white px-5 py-3 rounded-xl transition cursor-pointer">
                 Read Article
                 </button>
+              </Link>
 
             </div>
 

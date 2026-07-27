@@ -17,9 +17,11 @@ const NewsCard = ({ article }) => {
         <Bookmark size={18} className={bookmarked ? "fill-red-500 text-red-500" : "text-gray-600"} />
       </button>
 
-      <Link to={`/article/${article.id}`}>
+      <Link to={`/article/${article.id}`}
+      state={{ article }}
+      >
         <img
-          src={article.image}
+          src={article.image_url}
           alt={article.title}
           className="w-full h-52 object-cover"
         />
@@ -29,10 +31,12 @@ const NewsCard = ({ article }) => {
       <div className="p-5">
 
         <p className="text-sm text-gray-600 bg-gray-200 w-30 text-center py-1 rounded-full">
-          {article.source.name}
+          {article.source_name}
         </p>
 
-        <Link to={`/article/${article.id}`}>
+        <Link to={`/article/${article.article_id}`}
+        state={{ article }}
+        >
           <h2 className="text-xl font-bold mt-2 hover:text-red-500 transition line-clamp-2">{article.title}</h2>
         </Link>
 

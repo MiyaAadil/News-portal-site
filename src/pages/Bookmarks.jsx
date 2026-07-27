@@ -15,7 +15,7 @@ const Bookmark = () => {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {bookmarks.map((article) => (
-          <NewsCard key={article.id} article={article} />
+          <NewsCard key={article.article_id} article={article} />
         ))}
       </div>
     </div>
