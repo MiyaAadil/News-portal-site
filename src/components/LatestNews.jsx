@@ -25,7 +25,7 @@ const LatestNews = () => {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        {articles.slice(11, 17).map((article) => (
+        {articles.slice(0, 6).map((article) => (
 
           
           <div
@@ -36,7 +36,7 @@ const LatestNews = () => {
             <div className="overflow-hidden">
 
               <img
-                src={article.image_url}
+                src={article.image_url || "https://placehold.co/1200x700?text=Image+unavailable"}
                 alt={article.title}
                 className="w-full h-56 object-cover group-hover:scale-105 transition duration-500"
               />

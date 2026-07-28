@@ -33,7 +33,7 @@ const Article = () => {
 
       <button
         onClick={() => navigate(-1)}
-        className="flex items-center gap-2 text-white hover:bg-black/80 transition-all duration-300 mb-6 bg-black px-4 py-2.5 rounded-full cursor-pointer"
+        className="flex items-center gap-2 text-white hover:bg-black/80 transition-all duration-300 mb-6 bg-black px-4 dark:bg-gray-400/50 py-2.5 rounded-full cursor-pointer"
       >
         <ArrowLeft size={18} />
       </button>

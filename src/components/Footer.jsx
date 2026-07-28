@@ -101,7 +101,7 @@ const Footer = () => {
 
             <FontAwesomeIcon icon={faEnvelope} />
 
-            <span>support@novanews.com</span>
+            <span>support@NewsPulse.com</span>
 
           </div>
 
@@ -146,7 +146,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-5 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
 
           <p className="text-gray-500 text-sm">
-            © 2026 NovaNews. All rights reserved.
+            © 2026 NewsPulse. All rights reserved.
           </p>
 
           <div className="flex gap-6 text-sm">

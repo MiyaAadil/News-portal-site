@@ -9,9 +9,9 @@ export const getTopHeadlines = async (category = "", query = "") => {
     const response = await axios.get(BASE_URL, {
       params: {
         apikey: API_KEY,
-        country: "us",
         language: "en",
-        category: "top",
+        category: category || undefined,
+        q: query || undefined,
       },
     });
 

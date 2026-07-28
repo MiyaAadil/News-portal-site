@@ -28,12 +28,12 @@ const TrendingNews = () => {
             show: { opacity: 1, y: 0 },
         }}
         className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-7xl mx-auto cursor-pointer'>
-        {articles.slice(5, 12).map((article) => (
+        {articles.slice(4, 11).map((article) => (
           <Link to={`/article/${article.article_id}`}
           state={{ article }}
           >
               <div className='border-b border-gray-400 flex flex-col gap-1 hover:text-red-400 transition-colors duration-300 ' key={article.id}>
-              <img className='rounded-2xl h-60 object-cover hover:scale-102 transition-all duration-300' src={article.image_url} alt="" />
+              <img className='rounded-2xl h-60 object-cover hover:scale-102 transition-all duration-300' src={article.image_url || "https://placehold.co/1200x700?text=Image+unavailable"} alt={article.title} />
               <h1 className='font-semibold text-xl line-clamp-2'>{article.title}</h1>
               <p className='text-sm line-clamp-3'>{article.description}</p>
 
